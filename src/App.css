@@ -1,38 +1,111 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   text-align: center;
+  background-color: #0f0a25;
+  color: white;
+  font-size: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  width: 70vw;
+  margin: 40px auto 0px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.randomHiragana {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 4vh 0;
+}
+
+.randomHiragana-prompt {
+  color: #a3a3a3;
+}
+
+.invisible {
+  visibility: hidden;
+}
+#showButton {
+  border-radius: 3px;
+  opacity: 0.2;
+  margin-top: 15px;
+}
+#showButton:hover {
+  opacity: 0.6;
+}
+
+.reset {
+  margin-top: 10vh;
+  outline: none;
+  border-radius: 3px;
+  background: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ans {
+  color: rgb(231, 26, 26);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button,
+input {
+  border: none;
+  outline: none;
+}
+.submit {
+  border-radius: 0px 4px 4px 0px;
+  background-color: #8f8da3;
+}
+
+input {
+  width: 10vw;
+  border-radius: 4px 0px 0px 4px;
+  padding-left: 3vw;
+  background-color: #ffffff;
+  border-right: 1px solid rgb(124, 118, 118);
+}
+
+.hidden {
+  display: none;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-correct {
+  color: rgb(74, 231, 26);
+}
+.score-incorrect {
+  color: rgb(231, 26, 26);
+}
+
+table {
+  margin: auto;
+}
+td {
+  width: 20%;
+}
+
+.option {
+  margin-top: 8vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.mode {
+  width: 20vw;
+  height: 13vh;
+  border-radius: 25px;
+  margin: 5px;
+  background-color: rgb(161, 169, 192);
+}
+
+.mode:hover {
+  opacity: 0.8;
+}
+
+.mode:focus {
+  background-color: rgb(215, 225, 255);
 }
