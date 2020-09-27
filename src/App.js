@@ -44,6 +44,7 @@ function App() {
     setTimeout(() => {
       setIsSpin(false);
     }, 2000);
+    document.querySelector("p").className = "invisible";
   };
 
   const changeMode = (e) => {
