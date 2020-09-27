@@ -14,11 +14,11 @@ const Score = ({
   return (
     <div className="score">
       <h6 className="score-correct">
-        <FontAwesomeIcon icon={faCheckCircle} pulse={correctSpin} size="lg" />
+        <FontAwesomeIcon icon={faCheckCircle} spin={correctSpin} size="lg" />
         {"  " + correctScore}
       </h6>
       <h6 className="score-incorrect">
-        <FontAwesomeIcon icon={faTimesCircle} pulse={incorrectSpin} size="lg" />
+        <FontAwesomeIcon icon={faTimesCircle} spin={incorrectSpin} size="lg" />
         {"  " + incorrectScore}
       </h6>
     </div>

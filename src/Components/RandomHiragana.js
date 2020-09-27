@@ -29,7 +29,6 @@ const RandomHiragana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
   }, [answer]);
 
   useEffect(() => {
-    setIsPrompt(false);
     if (correctRecord.length + incorrectRecord.length === 10) {
       setIsShowed(true);
       document.querySelector("#showButton").disabled = true;
@@ -44,6 +43,7 @@ const RandomHiragana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
     setIncorrectScore(incorrectScore + 1);
     setIncorrectSpin(true);
     setIsShowed(true);
+    setIsPrompt(false);
     setTimeout(() => {
       setIncorrectSpin(false);
     }, 2000);

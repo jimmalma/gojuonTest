@@ -29,8 +29,9 @@ body {
 }
 #showButton {
   border-radius: 3px;
-  opacity: 0.2;
+  opacity: 1;
   margin-top: 15px;
+  background-color: grey;
 }
 #showButton:hover {
   opacity: 0.6;
@@ -56,6 +57,7 @@ input {
 .submit {
   border-radius: 0px 4px 4px 0px;
   background-color: #8f8da3;
+  height: 100%;
 }
 
 input {
