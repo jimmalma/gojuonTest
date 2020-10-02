@@ -38,12 +38,6 @@ function App() {
 
   const resetQuestion = (e) => {
     e.preventDefault();
-    setQList(genRandomNoList());
-    setQNo(0);
-    setIsSpin(true);
-    setTimeout(() => {
-      setIsSpin(false);
-    }, 2000);
     window.location.reload();
   };
 
