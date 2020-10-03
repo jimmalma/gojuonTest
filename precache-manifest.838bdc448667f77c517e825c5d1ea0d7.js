@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "627489e9a5b5c3f4cd453067e8c253ff",
+    "revision": "ce4adb6487f70bcf6eba28b798ffdce1",
     "url": "/gojuonTest/index.html"
   },
   {
-    "revision": "d10263ab0ae29515dc8a",
+    "revision": "b7b00e2bcc966dbb9905",
     "url": "/gojuonTest/static/css/main.cf746c5c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gojuonTest/static/js/2.98167027.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d10263ab0ae29515dc8a",
-    "url": "/gojuonTest/static/js/main.a48f7655.chunk.js"
+    "revision": "b7b00e2bcc966dbb9905",
+    "url": "/gojuonTest/static/js/main.5e58e829.chunk.js"
   },
   {
     "revision": "f291bf2678a2eac86e61",
