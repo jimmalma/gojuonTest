@@ -16,7 +16,7 @@ const RandomHiragana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
   useEffect(() => {
     if (answer === hiragana[qList[qNo]]["romanization"]) {
       setCorrectRecord([...correctRecord, answer]);
-      setQNo(qNo !== 9 ? qNo + 1 : qNo);
+      setQNo(qNo !== qList.length - 1 ? qNo + 1 : qNo);
       setCorrectScore(correctScore + 1);
       setCorrectSpin(true);
       setIsPrompt(false);
@@ -29,7 +29,7 @@ const RandomHiragana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
   }, [answer]);
 
   useEffect(() => {
-    if (correctRecord.length + incorrectRecord.length === 10) {
+    if (correctRecord.length + incorrectRecord.length === qList.length) {
       setIsShowed(true);
       document.querySelector("#showButton").disabled = true;
     }
@@ -48,7 +48,7 @@ const RandomHiragana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
       setIncorrectSpin(false);
     }, 2000);
     setTimeout(() => {
-      setQNo(qNo !== 9 ? qNo + 1 : qNo);
+      setQNo(qNo !== qList.length - 1 ? qNo + 1 : qNo);
       setIsHidden(true);
       setIsShowed(false);
     }, 2000);
@@ -86,7 +86,9 @@ const RandomHiragana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
       </p>
       <AnsRecord
         isHidden={
-          correctRecord.length + incorrectRecord.length === 10 ? false : true
+          correctRecord.length + incorrectRecord.length === qList.length
+            ? false
+            : true
         }
         correctRecord={correctRecord}
         incorrectRecord={incorrectRecord}

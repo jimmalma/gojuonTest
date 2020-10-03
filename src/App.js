@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRedoAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import {
+  faRedoAlt,
+  faPaperPlane,
+  faMinusCircle,
+  faPlusCircle,
+  faCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 //import components
 import RandomHiragana from "./Components/RandomHiragana";
 import RandomKatakana from "./Components/RandomKatakana";
 
+if (
+  localStorage.getItem("mode") === null ||
+  localStorage.getItem("n_question") === null
+) {
+  localStorage.setItem("mode", "Hiragana");
+  localStorage.setItem("n_question", 10);
+}
+
 function App() {
   const genRandomNoList = (size = 10) => {
     let numberList = [];
-    while (numberList.length < 10) {
+    while (numberList.length < size) {
       let tempNo = Math.floor(Math.random() * 46);
       if (!numberList.includes(tempNo)) {
         numberList.push(tempNo);
@@ -21,10 +35,13 @@ function App() {
   const [romanjiText, setRomanjiText] = useState("");
   const [answer, setAnswer] = useState("");
   const [isShowed, setIsShowed] = useState(false);
-  const [qList, setQList] = useState(genRandomNoList());
+  const [n_question, setN_question] = useState(
+    parseInt(localStorage.getItem("n_question"))
+  );
+  const [qList, setQList] = useState(genRandomNoList(n_question));
   const [qNo, setQNo] = useState(0);
   const [isSpin, setIsSpin] = useState(false);
-  const [mode, setMode] = useState("Hiragana");
+  const [mode, setMode] = useState(localStorage.getItem("mode"));
 
   const getRomanjiText = (e) => {
     setRomanjiText(e.target.value);
@@ -44,10 +61,35 @@ function App() {
   const changeMode = (e) => {
     e.preventDefault();
     setMode(e.target.textContent);
+    localStorage.setItem("mode", e.target.textContent);
+    window.location.reload();
   };
+
+  const increaseQuestion = (e) => {
+    e.preventDefault();
+    setN_question(n_question + 1);
+    localStorage.setItem("n_question", n_question + 1);
+  };
+
+  const decreaseQuestion = (e) => {
+    e.preventDefault();
+    setN_question(n_question - 1);
+    localStorage.setItem("n_question", n_question - 1);
+  };
+
   return (
     <div className="App">
       <h2>Gojūon Test - {mode}</h2>
+      <span>
+        number of question:
+        <button onClick={increaseQuestion} className="n_question">
+          <FontAwesomeIcon icon={faPlusCircle} />
+        </button>
+        {n_question}
+        <button onClick={decreaseQuestion} className="n_question">
+          <FontAwesomeIcon icon={faMinusCircle} />
+        </button>
+      </span>
 
       {mode === "Hiragana" ? (
         <RandomHiragana
@@ -80,8 +122,9 @@ function App() {
       <button onClick={resetQuestion} className="reset">
         <FontAwesomeIcon icon={faRedoAlt} size="lg" spin={isSpin} />
       </button>
+
       <div className="option">
-        <button className="mode" onClick={changeMode} autoFocus>
+        <button className="mode" onClick={changeMode}>
           Hiragana
         </button>
         <button className="mode" onClick={changeMode}>

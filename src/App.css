@@ -27,6 +27,11 @@ body {
   color: #a3a3a3;
 }
 
+.n_question {
+  background-color: #0f0a25;
+  color: #8f8da3;
+}
+
 .invisible {
   visibility: hidden;
 }
