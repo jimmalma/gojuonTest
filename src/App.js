@@ -6,7 +6,6 @@ import {
   faPaperPlane,
   faMinusCircle,
   faPlusCircle,
-  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 //import components
@@ -42,6 +41,10 @@ function App() {
   const [qNo, setQNo] = useState(0);
   const [isSpin, setIsSpin] = useState(false);
   const [mode, setMode] = useState(localStorage.getItem("mode"));
+  const [correctScore, setCorrectScore] = useState(0);
+  const [incorrectScore, setIncorrectScore] = useState(0);
+  const [correctRecord, setCorrectRecord] = useState([]);
+  const [incorrectRecord, setIncorrectRecord] = useState([]);
 
   const getRomanjiText = (e) => {
     setRomanjiText(e.target.value);
@@ -55,14 +58,24 @@ function App() {
 
   const resetQuestion = (e) => {
     e.preventDefault();
-    window.location.reload();
+    setRomanjiText("");
+    setAnswer("");
+    setIsShowed(false);
+    setN_question(parseInt(localStorage.getItem("n_question")));
+    setQList(genRandomNoList(n_question));
+    setQNo(0);
+    setMode(localStorage.getItem("mode"));
+    setCorrectScore(0);
+    setIncorrectScore(0);
+    setCorrectRecord([]);
+    setIncorrectRecord([]);
   };
 
   const changeMode = (e) => {
     e.preventDefault();
     setMode(e.target.textContent);
     localStorage.setItem("mode", e.target.textContent);
-    window.location.reload();
+    resetQuestion(e);
   };
 
   const increaseQuestion = (e) => {
@@ -98,6 +111,14 @@ function App() {
           qList={qList}
           qNo={qNo}
           setQNo={setQNo}
+          correctScore={correctScore}
+          setCorrectScore={setCorrectScore}
+          incorrectScore={incorrectScore}
+          setIncorrectScore={setIncorrectScore}
+          correctRecord={correctRecord}
+          setCorrectRecord={setCorrectRecord}
+          incorrectRecord={incorrectRecord}
+          setIncorrectRecord={setIncorrectRecord}
         />
       ) : (
         <RandomKatakana
@@ -106,6 +127,14 @@ function App() {
           qList={qList}
           qNo={qNo}
           setQNo={setQNo}
+          correctScore={correctScore}
+          setCorrectScore={setCorrectScore}
+          incorrectScore={incorrectScore}
+          setIncorrectScore={setIncorrectScore}
+          correctRecord={correctRecord}
+          setCorrectRecord={setCorrectRecord}
+          incorrectRecord={incorrectRecord}
+          setIncorrectRecord={setIncorrectRecord}
         />
       )}
       <div className={isShowed ? "hidden" : ""}>

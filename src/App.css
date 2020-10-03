@@ -32,6 +32,10 @@ body {
   color: #8f8da3;
 }
 
+.n_question:hover {
+  color: #ffffff;
+}
+
 .invisible {
   visibility: hidden;
 }
@@ -66,6 +70,9 @@ input {
   border-radius: 0px 4px 4px 0px;
   background-color: #8f8da3;
   height: 100%;
+}
+.submit:hover {
+  color: white;
 }
 
 input {

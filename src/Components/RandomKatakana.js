@@ -3,15 +3,25 @@ import katakana from "../katakana";
 import Score from "./Score";
 import AnsRecord from "./KatakanaAnsRecord";
 
-const RandomKatakana = ({ answer, setIsShowed, qList, qNo, setQNo }) => {
+const RandomKatakana = ({
+  answer,
+  setIsShowed,
+  qList,
+  qNo,
+  setQNo,
+  correctScore,
+  setCorrectScore,
+  incorrectScore,
+  setIncorrectScore,
+  correctRecord,
+  setCorrectRecord,
+  incorrectRecord,
+  setIncorrectRecord,
+}) => {
   const [isHidden, setIsHidden] = useState(true);
-  const [correctScore, setCorrectScore] = useState(0);
-  const [incorrectScore, setIncorrectScore] = useState(0);
   const [correctSpin, setCorrectSpin] = useState(false);
   const [incorrectSpin, setIncorrectSpin] = useState(false);
   const [isPrompt, setIsPrompt] = useState(false);
-  const [correctRecord, setCorrectRecord] = useState([]);
-  const [incorrectRecord, setIncorrectRecord] = useState([]);
 
   useEffect(() => {
     if (answer === katakana[qList[qNo]]["roumaji"]) {
