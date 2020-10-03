@@ -136,7 +136,7 @@ export default [
   },
   {
     kana: "フ",
-    roumaji: "hu",
+    roumaji: "fu",
     type: "gojuuon",
   },
   {
