@@ -9,7 +9,7 @@ import katakana from "../katakana";
 
 const AnsRecord = ({ isHidden, qList, correctRecord, incorrectRecord }) => {
   return (
-    <table className={isHidden ? "hidden" : ""}>
+    <table className={isHidden ? "hidden" : "ansRecord"}>
       <tr>
         <th>Question</th>
         <th>Answer</th>

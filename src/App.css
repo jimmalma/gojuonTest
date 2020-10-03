@@ -13,11 +13,12 @@ body {
 
 .App {
   width: 85vw;
-  height: 80vh;
+
   margin: 30px auto 0px auto;
   background-color: rgb(27, 28, 31);
   border-radius: 5%;
   padding: 1vw;
+  overflow: auto;
 }
 
 .randomHiragana {
@@ -36,6 +37,7 @@ body {
 .n_question {
   background-color: rgba(0, 0, 0, 0);
   color: #8f8da3;
+  font-size: 1rem;
 }
 
 .n_question:hover {
@@ -88,6 +90,14 @@ input {
   background-color: #ffffff;
   border-right: 1px solid rgb(124, 118, 118);
   margin-top: 2%;
+  margin-left: 3vw;
+}
+
+.ansRecord {
+  margin-top: 5vh;
+  background-color: #3a3942;
+  border-radius: 15px;
+  padding: 1vh;
 }
 
 .hidden {
