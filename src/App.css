@@ -12,15 +12,21 @@ body {
 }
 
 .App {
-  width: 70vw;
-  margin: 40px auto 0px auto;
+  width: 85vw;
+  height: 80vh;
+  margin: 30px auto 0px auto;
+  background-color: rgb(27, 28, 31);
+  border-radius: 5%;
+  padding: 1vw;
 }
 
 .randomHiragana {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 4vh 0;
+  height: 15vh;
+  width: 80%;
+  margin: auto;
 }
 
 .randomHiragana-prompt {
@@ -28,7 +34,7 @@ body {
 }
 
 .n_question {
-  background-color: #0f0a25;
+  background-color: rgba(0, 0, 0, 0);
   color: #8f8da3;
 }
 
@@ -50,11 +56,11 @@ body {
 }
 
 .reset {
-  margin-top: 10vh;
   outline: none;
   border-radius: 3px;
   background: none;
   color: white;
+  margin: 9% auto;
 }
 
 .ans {
@@ -76,11 +82,12 @@ input {
 }
 
 input {
-  width: 10vw;
+  width: 16vw;
   border-radius: 4px 0px 0px 4px;
   padding-left: 3vw;
   background-color: #ffffff;
   border-right: 1px solid rgb(124, 118, 118);
+  margin-top: 2%;
 }
 
 .hidden {
@@ -110,13 +117,15 @@ td {
   margin-top: 8vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px auto;
+  width: 90%;
 }
 .mode {
-  width: 20vw;
-  height: 13vh;
-  border-radius: 25px;
-  margin: 5px;
-  background-color: rgb(161, 169, 192);
+  width: 80%;
+  height: 10vh;
+  border-radius: 14px;
+  margin: 1vw;
+  background-color: rgba(130, 135, 150, 0.9);
 }
 
 .mode:hover {

@@ -17,11 +17,11 @@ const RandomHiragana = ({
   setCorrectRecord,
   incorrectRecord,
   setIncorrectRecord,
+  setIsPrompt,
 }) => {
   const [isHidden, setIsHidden] = useState(true);
   const [correctSpin, setCorrectSpin] = useState(false);
   const [incorrectSpin, setIncorrectSpin] = useState(false);
-  const [isPrompt, setIsPrompt] = useState(false);
 
   useEffect(() => {
     if (answer === hiragana[qList[qNo]]["romanization"]) {
@@ -91,9 +91,7 @@ const RandomHiragana = ({
           incorrectSpin={incorrectSpin}
         />
       </div>
-      <p className={isPrompt ? "randomHiragana-prompt" : "invisible"}>
-        Try again !!!!!!
-      </p>
+
       <AnsRecord
         isHidden={
           correctRecord.length + incorrectRecord.length === qList.length

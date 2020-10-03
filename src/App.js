@@ -45,6 +45,7 @@ function App() {
   const [incorrectScore, setIncorrectScore] = useState(0);
   const [correctRecord, setCorrectRecord] = useState([]);
   const [incorrectRecord, setIncorrectRecord] = useState([]);
+  const [isPrompt, setIsPrompt] = useState(false);
 
   const getRomanjiText = (e) => {
     setRomanjiText(e.target.value);
@@ -69,6 +70,7 @@ function App() {
     setIncorrectScore(0);
     setCorrectRecord([]);
     setIncorrectRecord([]);
+    setIsPrompt(false);
   };
 
   const changeMode = (e) => {
@@ -119,6 +121,8 @@ function App() {
           setCorrectRecord={setCorrectRecord}
           incorrectRecord={incorrectRecord}
           setIncorrectRecord={setIncorrectRecord}
+          isPrompt={isPrompt}
+          setIsPrompt={setIsPrompt}
         />
       ) : (
         <RandomKatakana
@@ -135,6 +139,8 @@ function App() {
           setCorrectRecord={setCorrectRecord}
           incorrectRecord={incorrectRecord}
           setIncorrectRecord={setIncorrectRecord}
+          isPrompt={isPrompt}
+          setIsPrompt={setIsPrompt}
         />
       )}
       <div className={isShowed ? "hidden" : ""}>
@@ -147,6 +153,9 @@ function App() {
         <button onClick={submitAns} className="submit">
           <FontAwesomeIcon icon={faPaperPlane} />
         </button>
+        <p className={isPrompt ? "randomHiragana-prompt" : "invisible"}>
+          Try again !!!!!!
+        </p>
       </div>
       <button onClick={resetQuestion} className="reset">
         <FontAwesomeIcon icon={faRedoAlt} size="lg" spin={isSpin} />
