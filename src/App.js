@@ -21,10 +21,10 @@ if (
 }
 
 function App() {
-  const genRandomNoList = (size = 10) => {
+  const genRandomNoList = (size = 10, length = 46) => {
     let numberList = [];
     while (numberList.length < size) {
-      let tempNo = Math.floor(Math.random() * 46);
+      let tempNo = Math.floor(Math.random() * length);
       if (!numberList.includes(tempNo)) {
         numberList.push(tempNo);
       }
@@ -37,7 +37,8 @@ function App() {
   const [n_question, setN_question] = useState(
     parseInt(localStorage.getItem("n_question"))
   );
-  const [qList, setQList] = useState(genRandomNoList(n_question));
+  const [length, setLength] = useState(46);
+  const [qList, setQList] = useState(genRandomNoList(n_question, length));
   const [qNo, setQNo] = useState(0);
   const [isSpin, setIsSpin] = useState(false);
   const [mode, setMode] = useState(localStorage.getItem("mode"));
@@ -82,14 +83,26 @@ function App() {
 
   const increaseQuestion = (e) => {
     e.preventDefault();
-    setN_question(n_question + 1);
-    localStorage.setItem("n_question", n_question + 1);
+    if (n_question < length) {
+      setN_question(n_question + 1);
+      localStorage.setItem("n_question", n_question + 1);
+      if (n_question === length) {
+        e.disabled = true;
+      }
+    }
   };
 
   const decreaseQuestion = (e) => {
     e.preventDefault();
-    setN_question(n_question - 1);
-    localStorage.setItem("n_question", n_question - 1);
+    if (n_question > 1) {
+      setN_question(n_question - 1);
+      localStorage.setItem("n_question", n_question - 1);
+      if (n_question === 1) {
+        console.log(e);
+        e.disabled = true;
+        document.querySelectorAll("button.n_question")[1].style.color = "black";
+      }
+    }
   };
 
   return (
