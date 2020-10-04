@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/gojuonTest/static/css/main.6e43e1e4.chunk.css",
-    "main.js": "/gojuonTest/static/js/main.0c5893f1.chunk.js",
-    "main.js.map": "/gojuonTest/static/js/main.0c5893f1.chunk.js.map",
+    "main.js": "/gojuonTest/static/js/main.1b920241.chunk.js",
+    "main.js.map": "/gojuonTest/static/js/main.1b920241.chunk.js.map",
     "runtime-main.js": "/gojuonTest/static/js/runtime-main.dbb6b7a4.js",
     "runtime-main.js.map": "/gojuonTest/static/js/runtime-main.dbb6b7a4.js.map",
     "static/js/2.2a12919e.chunk.js": "/gojuonTest/static/js/2.2a12919e.chunk.js",
     "static/js/2.2a12919e.chunk.js.map": "/gojuonTest/static/js/2.2a12919e.chunk.js.map",
     "index.html": "/gojuonTest/index.html",
-    "precache-manifest.ead7f9a96205634846bbc3b103419424.js": "/gojuonTest/precache-manifest.ead7f9a96205634846bbc3b103419424.js",
+    "precache-manifest.d7d1325c1a633ebd55a92f291705b1c2.js": "/gojuonTest/precache-manifest.d7d1325c1a633ebd55a92f291705b1c2.js",
     "service-worker.js": "/gojuonTest/service-worker.js",
     "static/css/main.6e43e1e4.chunk.css.map": "/gojuonTest/static/css/main.6e43e1e4.chunk.css.map",
     "static/js/2.2a12919e.chunk.js.LICENSE.txt": "/gojuonTest/static/js/2.2a12919e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.dbb6b7a4.js",
     "static/js/2.2a12919e.chunk.js",
     "static/css/main.6e43e1e4.chunk.css",
-    "static/js/main.0c5893f1.chunk.js"
+    "static/js/main.1b920241.chunk.js"
   ]
 }
